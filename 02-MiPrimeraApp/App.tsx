@@ -1,14 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { HolaMundoScreens } from './src/screens/HolaMundoScreens';
 
-const App = () => {
+export const App = () => {
   return (
-    <View style={{flex:1,backgroundColor: 'red'}}>
-      <Text>
-        Hola mudno
-      </Text>
-    </View>
+    <HolaMundoScreens />
   );
 };
 
-export default App
