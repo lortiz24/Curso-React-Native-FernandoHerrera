@@ -118,3 +118,39 @@ Este elemento no existe como tal, sino que tenemos que crearlo. Se puede usar un
     1. Aqui le colocamos un position absolute, basado en el padre
     2. bottom en 0, le decimos que lo ponganal final del padre
     3. right de 0 para que este al inicio contando de derecha a izquierda basado en la posicon del padre
+
+## 57. Componente personalizado
+
+1. en src/components crear un Fab.tsx
+    1. Aqui pegamos e touchableOpacity que hicismos anteriormene
+    2. Creamos le StyleSheet y pegamos los stilos que teniamos anteriormente
+2. Le pasaremos al Fab unas props lamadas titulo, para ello vamos a crear una interface llamda props donde definieros los datos y el tipo de datos que recibiremos
+    
+
+## 58. Enviar funciones y propiedades opcionales
+
+1. Creamos en la interface props el atritbuto onPress de tipo void, le pasamos al void una funcion que ejecuta el setContador y en el fab mandamos la referencia a esa funcion que le estamos pasando.
+
+2. Se crea un nuevo props llamado position que tenga dos valores en string: bl o br
+
+## 59 Estilos condicionales
+
+1. Pasamos el position que le pusimos que tenga dos opciones, luego en el style hacemos un fabLocation que incluya los atributos comunes luego creamos un right y un left 
+
+3. En https://ethercreative.github.io/react-native-shadow-generator/ nos sirve para generar un style de sombras que se ajuste a android y ios
+
+3. Reemplazamos el TouchableOpacity con un TouchableNativeFeedback
+    1. Debemos envolver este en un view y le cortamos el style al TouchableNativeFeedback y se lo pegamos al nuevi view
+    2. Le colocamos un background y le pasamos un TouchableNativeFeedback.Ripple('black',false)
+    
+## 60. Codigo especifico para plataforma
+
+1. Importamos Platform
+2. Creamos dos funciones en el FunctionComponent una que retrne lo que va para android y otra que retorne lo que va para ios
+    1. Para IOS el touchableOpacity nos sirve perfectamene y no necesitamos en TouchableNativeFeedback
+    2. Para Android lo dejamos como la clase pasada
+3. En el return del FunctionComponent retornamos o android o ios dependiendo de Platform.OS
+4. En IOS le colocamos un ActiveOpacity en 0.75
+
+
+    
